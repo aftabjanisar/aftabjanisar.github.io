@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Aftab Alam Janisar | Academic &amp; AI Security Researcher</title>
+  <meta name="description" content="Academic website of Dr. Aftab Alam Janisar (PhD) - Lecturer at British International College, Krirk University Thailand. Researcher in AI-enabled IoT Security Requirements Engineering." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0e12;
+      --surface: #14171f;
+      --surface-hover: #1c212c;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --badge-q1: #10b981;
+      --badge-q2: #38bdf8;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --container-max: 1160px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+    .container { max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(12, 14, 18, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .nav-avatar-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+    .brand-meta strong {
+      display: block;
+      font-size: 1rem;
+      color: #fff;
+      font-family: var(--font-heading);
+    }
+    .brand-meta small {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    nav a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    nav a:hover { color: var(--accent); }
+    .nav-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 9999px;
+      background: var(--surface-hover);
+      border: 1px solid var(--border);
+      color: #fff !important;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .nav-btn:hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    /* Section Headings */
+    .section-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+    h2.section-title {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+    }
+    h2.section-title em { font-style: italic; color: var(--accent); }
+
+    /* Hero */
+    .hero { padding: 4.5rem 0 3rem; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-badge span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+    }
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 3.25rem;
+      line-height: 1.15;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { color: var(--accent); font-style: italic; }
+    .hero-bio {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 620px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0b111a;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .btn-primary:hover { background: #7dd3fc; transform: translateY(-1px); }
+    .btn-secondary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 0.75rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .btn-secondary:hover { border-color: var(--accent); background: var(--surface-hover); }
+
+    .current-role {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1.25rem;
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+    }
+    .current-role strong { color: #fff; display: block; }
+    .current-role small { color: var(--text-muted); }
+
+    /* Photo Profile Card */
+    .profile-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .profile-card-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      background: #1e293b;
+    }
+    .profile-card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .profile-card:hover .profile-card-image {
+      transform: scale(1.02);
+    }
+    .profile-card-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      padding: 0.75rem 1rem;
+      background: rgba(12, 14, 18, 0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .profile-card-badge span {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .profile-card-badge strong {
+      display: block;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    .profile-card-badge small {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .scholarly-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .scholar-badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.75rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+    }
+    .scholar-badge:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Metrics Strip */
+    .metrics-bar {
+      margin: 3rem 0 4.5rem;
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .metric-item strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .metric-item span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    section { padding: 4.5rem 0; border-top: 1px solid var(--border); }
+    .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .three-col-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+    /* Cards */
+    .research-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .research-card:hover { transform: translateY(-4px); border-color: var(--border-accent); }
+    .card-num {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .research-card h3 { font-family: var(--font-heading); color: #fff; font-size: 1.25rem; margin-bottom: 0.85rem; }
+    .research-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .tag-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 4px;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Grant Box */
+    .grant-box {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(99, 102, 241, 0.05));
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+    }
+    .grant-box h4 { color: #fff; font-size: 1.15rem; font-family: var(--font-heading); margin-bottom: 0.5rem; }
+    .grant-meta { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.75rem; }
+
+    /* Publications */
+    .filter-group { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.45rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent);
+      color: #0b111a;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+    .pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .pub-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+    .pub-card:hover { border-color: var(--border-accent); background: var(--surface-hover); }
+    .pub-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; }
+    .pub-title { font-size: 1.05rem; font-weight: 600; color: #fff; line-height: 1.4; }
+    .pub-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-q1 { background: rgba(16, 185, 129, 0.15); color: var(--badge-q1); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-q2 { background: rgba(56, 189, 248, 0.15); color: var(--badge-q2); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-conf { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .badge-review { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .pub-authors { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .pub-venue { font-size: 0.85rem; color: #cbd5e1; font-style: italic; margin-bottom: 0.75rem; }
+    .pub-link { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+
+    /* Timeline */
+    .timeline {
+      border-left: 2px solid var(--border);
+      margin-left: 0.5rem;
+      padding-left: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+    }
+    .timeline-item { position: relative; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.35rem;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+    }
+    .timeline-date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+    }
+    .timeline-role { font-size: 1.15rem; font-weight: 600; color: #fff; }
+    .timeline-place { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0.5rem; }
+    .timeline-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Contact Card */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3.5rem;
+    }
+    .contact-card-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .contact-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .contact-entry span {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .contact-entry a, .contact-entry p { font-size: 0.95rem; color: #fff; font-weight: 500; }
+    .contact-entry a:hover { color: var(--accent); }
+
+    /* Footer */
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .two-col-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.4rem; }
+      nav { display: none; }
+      .contact-grid { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <img src="aftab-janisar.jpg" alt="Dr. Aftab Alam Janisar" class="nav-avatar-img" />
+        <div class="brand-meta">
+          <strong>Dr. Aftab Alam Janisar</strong>
+          <small>Academic · AI &amp; IoT Security</small>
+        </div>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#journey">Journey</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact" class="nav-btn">Let’s Connect ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span></span> AI IN CYBERSECURITY · REQUIREMENTS ENGINEERING · IOT
+          </div>
+          <h1 class="hero-title">
+            Engineering Security.<br />Empowering <em>Connected AI.</em>
+          </h1>
+          <p class="hero-bio">
+            I am Dr. Aftab Alam Janisar, an academic and researcher specializing in AI-enabled security requirements engineering, standard-compliant IoT frameworks, and applied NLP.
+          </p>
+          <div class="hero-actions">
+            <a href="#publications" class="btn-primary">View Publications ↗</a>
+            <a href="#contact" class="btn-secondary">Collaborate / Contact →</a>
+          </div>
+          <div class="current-role">
+            <span style="font-size: 1.25rem;">🏛️</span>
+            <div>
+              <strong>Lecturer, Department of ICT</strong>
+              British International College, Krirk University
+              <small style="display:block;">Bangkok, Thailand (August 2026 – Present)</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo Card matching Reference -->
+        <div class="profile-card">
+          <div class="profile-card-image-wrap">
+            <img src="aftab-janisar.jpg" alt="Dr. Aftab Alam Janisar" class="profile-card-image" />
+            <div class="profile-card-badge">
+              <span>RESEARCHER · LECTURER</span>
+              <strong>Dr. Aftab Alam Janisar</strong>
+              <small>PhD in Information Technology · UTP, Malaysia</small>
+            </div>
+          </div>
+          
+          <div class="scholarly-links">
+            <a href="https://scholar.google.com/citations?user=fT6jliUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="scholar-badge">Google Scholar ↗</a>
+            <a href="https://www.scopus.com/authid/detail.uri?authorId=57880901000" target="_blank" rel="noopener noreferrer" class="scholar-badge">Scopus ↗</a>
+            <a href="https://www.webofscience.com/wos/author/record/HSG-0507-2023?state=%7B%7D" target="_blank" rel="noopener noreferrer" class="scholar-badge">Web of Science ↗</a>
+            <a href="https://orcid.org/0000-0002-9710-4345" target="_blank" rel="noopener noreferrer" class="scholar-badge">ORCID ↗</a>
+            <a href="https://www.linkedin.com/in/aftab-alam-janisar-8a2716114/" target="_blank" rel="noopener noreferrer" class="scholar-badge">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="metrics-bar">
+        <div class="metric-item">
+          <strong>PhD · UTP Malaysia</strong>
+          <span>Ranked #1 in Malaysia &amp; Top in Asia</span>
+        </div>
+        <div class="metric-item">
+          <strong>Q1 / Q2 Journals</strong>
+          <span>IEEE IoTJ, Automated Software Eng., Computers</span>
+        </div>
+        <div class="metric-item">
+          <strong>PI Research Grant</strong>
+          <span>AI-Enabled Security Requirements Framework</span>
+        </div>
+        <div class="metric-item">
+          <strong>5+ Years Academic</strong>
+          <span>Teaching &amp; Research in Thailand, Malaysia &amp; PK</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 01: About -->
+    <section id="about">
+      <div class="two-col-grid">
+        <div>
+          <span class="section-eyebrow">01 / Profile</span>
+          <h2 class="section-title">Bridging AI, Standards, and <em>Cyber Resilience.</em></h2>
+        </div>
+        <div>
+          <p style="margin-bottom: 1.2rem; color: #cbd5e1; font-size: 1.05rem;">
+            My work centers on <strong>Security Requirements Engineering (SRE)</strong>, <strong>Machine Learning / NLP</strong>, and <strong>IoT ecosystems</strong>.
+          </p>
+          <p style="margin-bottom: 1.2rem; color: var(--text-muted); font-size: 0.95rem;">
+            I completed my Ph.D. in Information Technology at <em>Universiti Teknologi PETRONAS (UTP)</em>, investigating BERT-NLP frameworks to audit and assess the completeness of smart home IoT security requirements using international security criteria (Common Criteria / ISO 15408).
+          </p>
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
+            Currently, as a Lecturer at the British International College of Krirk University (Thailand), I combine student-centered technical instruction with collaborative research across Malaysia, Pakistan, and Southeast Asia.
+          </p>
+          <div style="display:flex; gap: 1rem;">
+            <a href="mailto:aftab.janisar@gmail.com" class="btn-secondary" style="font-size: 0.85rem;">Email Me ↗</a>
+            <a href="https://scholar.google.com/citations?user=fT6jliUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="font-size: 0.85rem;">View Scholar ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 02: Research & Grants -->
+    <section id="research">
+      <span class="section-eyebrow">02 / Research Domains</span>
+      <h2 class="section-title">Intelligent frameworks for <em>secure systems.</em></h2>
+
+      <div class="three-col-grid">
+        <div class="research-card">
+          <div>
+            <div class="card-num">01 // AUTOMATED SRE</div>
+            <h3>Common Criteria Completeness Checking</h3>
+            <p>Formulating automated techniques to benchmark and audit security requirements against international standards (Common Criteria ISO/IEC 15408).</p>
+          </div>
+          <div class="tag-group">
+            <span class="tag">Common Criteria</span>
+            <span class="tag">Security Standards</span>
+            <span class="tag">Assurance Cases</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div>
+            <div class="card-num">02 // APPLIED NLP &amp; ML</div>
+            <h3>Attention-Based Neural Models</h3>
+            <p>Leveraging BERT, transformer networks, and deep neural models for semantic parsing, classification, and gap analysis in unstructured software specifications.</p>
+          </div>
+          <div class="tag-group">
+            <span class="tag">BERT NLP</span>
+            <span class="tag">Text Classification</span>
+            <span class="tag">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <div>
+            <div class="card-num">03 // IOT &amp; CYBER-PHYSICAL</div>
+            <h3>Smart Home Threat Assurance</h3>
+            <p>Designing Goal Structuring Notation (GSN) frameworks and mitigation workflows to defend smart home architectures and edge IoT devices from adversarial threats.</p>
+          </div>
+          <div class="tag-group">
+            <span class="tag">IoT Security</span>
+            <span class="tag">Goal Structuring Notation</span>
+            <span class="tag">Cyber-Physical Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grant Box -->
+      <div class="grant-box">
+        <span class="section-eyebrow" style="color: #38bdf8;">Funded Research Project</span>
+        <h4>Principal Investigator (PI) — International Matching Grant</h4>
+        <div class="grant-meta">
+          <strong>Grant Title:</strong> An AI Enabled Framework to Identifying Security Requirement Completeness with Security Standards<br />
+          <strong>Partnership:</strong> Universiti Teknologi PETRONAS (Malaysia) &amp; Foundation University Islamabad (Pakistan) · <strong>Budget:</strong> $5,000 USD
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Engineered and validated a standards-based framework combining Common Criteria and assurance case techniques, verified through industrial expert panels and smart home case studies.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 03: Publications -->
+    <section id="publications">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem; margin-bottom: 2rem;">
+        <div>
+          <span class="section-eyebrow">03 / Scholarly Record</span>
+          <h2 class="section-title" style="margin-bottom: 0;">Peer-Reviewed <em>Publications.</em></h2>
+        </div>
+        <a href="https://scholar.google.com/citations?user=fT6jliUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-size: 0.9rem; font-weight:600;">
+          Open Google Scholar Profile ↗
+        </a>
+      </div>
+
+      <div class="filter-group">
+        <button class="filter-btn active" onclick="filterPubs('all')">All Works</button>
+        <button class="filter-btn" onclick="filterPubs('q1')">Q1 Journals</button>
+        <button class="filter-btn" onclick="filterPubs('q2')">Q2 Journals</button>
+        <button class="filter-btn" onclick="filterPubs('conf')">Conferences</button>
+        <button class="filter-btn" onclick="filterPubs('review')">Under Review</button>
+      </div>
+
+      <div class="pub-list" id="pubList">
+        <div class="pub-card" data-category="q1">
+          <div class="pub-header">
+            <div class="pub-title">AI-Enabled Common Criteria–Based Completeness Assessment of Security Requirements in IoT Smart Home Systems</div>
+            <span class="pub-badge badge-q1">SJR Q1</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong> et al.</div>
+          <div class="pub-venue">IEEE Internet of Things Journal, 2026.</div>
+          <a href="https://doi.org/10.1109/JIOT.2026.3724958" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.1109/JIOT.2026.3724958 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="q2">
+          <div class="pub-header">
+            <div class="pub-title">Standard-compliant security requirement assessment with attention-based models</div>
+            <span class="pub-badge badge-q2">SJR Q2 · Springer</span>
+          </div>
+          <div class="pub-authors"><strong>Aftab Alam Janisar</strong>, et al.</div>
+          <div class="pub-venue">Automated Software Engineering 33(2): 66, 2026.</div>
+          <a href="https://doi.org/10.1007/s10515-026-00609-w" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.1007/s10515-026-00609-w ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="q1">
+          <div class="pub-header">
+            <div class="pub-title">Enhancing Security Requirements Engineering for IoT Smart Homes: A BERT-based Approach to Automated Completeness Checking</div>
+            <span class="pub-badge badge-q1">SJR Q1 · Elsevier</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong>, et al.</div>
+          <div class="pub-venue">Scientific African, 2026: p. e03275.</div>
+          <a href="https://doi.org/10.1016/j.sciaf.2026.e03275" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.1016/j.sciaf.2026.e03275 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="q1">
+          <div class="pub-header">
+            <div class="pub-title">Security Requirements Engineering: A Review and Analysis</div>
+            <span class="pub-badge badge-q1">SJR Q1 · MDPI</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong>, A. Meidan, K. S. b. K. Kalid, A. R. Gilal, A. B. Sarlan.</div>
+          <div class="pub-venue">Computers 2025, 14, 429.</div>
+          <a href="https://doi.org/10.3390/computers14100429" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.3390/computers14100429 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="q2">
+          <div class="pub-header">
+            <div class="pub-title">Comprehensive Analysis of Security Requirements Engineering Approaches with Assurance Perspective</div>
+            <span class="pub-badge badge-q2">Scopus Q2/Q3</span>
+          </div>
+          <div class="pub-authors"><strong>A. Janisar</strong>, K. S. Kalid, A. Sarlan, and A. A. M. Salameh.</div>
+          <div class="pub-venue">Journal of Advanced Research in Applied Sciences and Engineering Technology, pp. 104-119, 2024.</div>
+          <a href="https://doi.org/10.37934/araset.54.2.104119" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.37934/araset.54.2.104119 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="q2">
+          <div class="pub-header">
+            <div class="pub-title">A security assurance case for IoT systems using Goal Structure Notation</div>
+            <span class="pub-badge badge-q2">Journal Article</span>
+          </div>
+          <div class="pub-authors"><strong>Aftab Alam, J.</strong>, K. Shafee, S. Aliza, A. R. Gilal, M. A. Iqbal, M. A. Khan.</div>
+          <div class="pub-venue">Journal of Information System and Technology Management (JISTM), 10(38), 2025.</div>
+          <a href="https://doi.org/10.35631/JISTM.1038026" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.35631/JISTM.1038026 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="conf">
+          <div class="pub-header">
+            <div class="pub-title">Security Requirements Assurance: An Assurance Case Perspective</div>
+            <span class="pub-badge badge-conf">IEEE Conference</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong>, K. S. bin Kalid, A. B. Sarlan, and A. R. Gilal.</div>
+          <div class="pub-venue">2023 IEEE 8th International Conference on Software Engineering and Computer Systems (ICSECS).</div>
+          <a href="https://doi.org/10.1109/ICSECS58457.2023.10256374" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.1109/ICSECS58457.2023.10256374 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="conf">
+          <div class="pub-header">
+            <div class="pub-title">Software Development Teams Knowledge and Awareness of Security Requirement Engineering</div>
+            <span class="pub-badge badge-conf">Elsevier Conference</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong>, K. Shafee bin Kalid, A. B. Sarlan, and U. D. Maiwada.</div>
+          <div class="pub-venue">Procedia Computer Science, vol. 234, pp. 1348-1355, 2024.</div>
+          <a href="https://doi.org/10.1016/j.procs.2024.03.133" target="_blank" rel="noopener noreferrer" class="pub-link">DOI: 10.1016/j.procs.2024.03.133 ↗</a>
+        </div>
+
+        <div class="pub-card" data-category="review">
+          <div class="pub-header">
+            <div class="pub-title">Security Requirements Classification Using Neural Models Aligned with Security Standards</div>
+            <span class="pub-badge badge-review">Under Review</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong> et al.</div>
+          <div class="pub-venue">Submitted to: Wiley IET Software.</div>
+        </div>
+
+        <div class="pub-card" data-category="review">
+          <div class="pub-header">
+            <div class="pub-title">IoT Security Requirements Completeness Based on Standards</div>
+            <span class="pub-badge badge-review">Under Review</span>
+          </div>
+          <div class="pub-authors"><strong>A. A. Janisar</strong> et al.</div>
+          <div class="pub-venue">Submitted to: Springer Neural Computing and Applications.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 04: Academic Journey -->
+    <section id="journey">
+      <div class="two-col-grid">
+        <div>
+          <span class="section-eyebrow">04 / Trajectory</span>
+          <h2 class="section-title">Academic &amp; Professional <em>Journey.</em></h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            Over 5 years across higher education institutions in Thailand, Malaysia, and Pakistan, contributing to research leadership, curriculum delivery, and technical training.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">August 2026 — Present</div>
+            <div class="timeline-role">Lecturer in ICT</div>
+            <div class="timeline-place">British International College, Krirk University · Bangkok, Thailand</div>
+            <div class="timeline-desc">Leading undergraduate lectures and hands-on modules in computing and software technologies.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Apr 2022 — Jul 2025</div>
+            <div class="timeline-role">Teaching Assistant</div>
+            <div class="timeline-place">Universiti Teknologi PETRONAS (UTP) · Perak, Malaysia</div>
+            <div class="timeline-desc">Taught Software Engineering, Requirements Engineering, Enterprise Resource Planning, and Cyber Ethics across undergraduate cohorts.</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Jul 2021 — Apr 2022</div>
+            <div class="timeline-role">Lecturer</div>
+            <div class="timeline-place">COMSATS University Abbottabad · Pakistan</div>
+            <div class="timeline-desc">Delivered Mobile Application Development (CSC303) and Software Engineering Concepts (CSD201).</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Prior Industry Roles</div>
+            <div class="timeline-role">System &amp; Software Support Engineer</div>
+            <div class="timeline-place">Ibex Global &amp; MTBC · Islamabad / Rawalpindi, Pakistan</div>
+            <div class="timeline-desc">Hands-on experience in software operations, infrastructure maintenance, and application support.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 05: Teaching & Toolkit -->
+    <section id="teaching">
+      <span class="section-eyebrow">05 / Pedagogy &amp; Skills</span>
+      <h2 class="section-title">Teaching philosophy &amp; <em>practical toolkit.</em></h2>
+
+      <div class="two-col-grid">
+        <div style="background: var(--surface); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+          <h3 style="color:#fff; font-family:var(--font-heading); margin-bottom: 1rem;">Teaching Philosophy</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+            <em>"I adopt a student-centered approach that bridges theoretical rigor with industry standard practices. Through a combination of interactive lectures, lab-based implementations, and collaborative problem-solving, I aim to equip students with analytical depth and real-world engineering competence."</em>
+          </p>
+          <hr style="border:0; border-top:1px solid var(--border); margin: 1.5rem 0;" />
+          <h4 style="color:#fff; font-size: 0.95rem; margin-bottom: 0.75rem;">Courses Taught:</h4>
+          <div class="tag-group">
+            <span class="tag">Software Engineering (TFB1103)</span>
+            <span class="tag">Requirements Engineering (TFB3413)</span>
+            <span class="tag">Mobile App Development (CSC303)</span>
+            <span class="tag">Enterprise Resource Planning (ERP)</span>
+            <span class="tag">Cyber Law &amp; Computer Ethics</span>
+            <span class="tag">Structured Programming (Python/C)</span>
+          </div>
+        </div>
+
+        <div style="background: var(--surface); padding: 2rem; border-radius: 12px; border: 1px solid var(--border);">
+          <h3 style="color:#fff; font-family:var(--font-heading); margin-bottom: 1rem;">Technical &amp; Research Toolkit</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+            Hands-on technical stacks for machine learning pipelines, requirements modeling, and security testing:
+          </p>
+          
+          <div style="display:flex; flex-direction:column; gap: 1rem;">
+            <div>
+              <strong style="color: var(--accent); font-size: 0.85rem; display:block;">AI &amp; NLP:</strong>
+              <span style="font-size:0.9rem; color: #cbd5e1;">Python, Hugging Face Transformers, BERT, PyTorch, Scikit-Learn, Pandas</span>
+            </div>
+            <div>
+              <strong style="color: var(--accent); font-size: 0.85rem; display:block;">SECURITY &amp; MODELING:</strong>
+              <span style="font-size:0.9rem; color: #cbd5e1;">Common Criteria (ISO/IEC 15408), Goal Structuring Notation (GSN), UML, Enterprise Architect</span>
+            </div>
+            <div>
+              <strong style="color: var(--accent); font-size: 0.85rem; display:block;">LANGUAGES:</strong>
+              <span style="font-size:0.9rem; color: #cbd5e1;">English (Fluent), Urdu (Native), Pashto (Native), Hindko (Fluent)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 06: Education & Awards -->
+    <section id="education">
+      <span class="section-eyebrow">06 / Qualifications</span>
+      <h2 class="section-title">Education &amp; <em>Honors.</em></h2>
+
+      <div class="three-col-grid">
+        <div class="research-card">
+          <div>
+            <div class="card-num">2022 — 2025</div>
+            <h3>Ph.D. in Information Technology</h3>
+            <p><strong>Universiti Teknologi PETRONAS (UTP), Malaysia</strong><br />
+            Thesis: <em>BERT-NLP based AI-Enabled Framework: Assessing Completeness of IoT Smart Home Security Requirements using Common Criteria.</em></p>
+          </div>
+          <span class="tag">Top Ranked in Malaysia</span>
+        </div>
+
+        <div class="research-card">
+          <div>
+            <div class="card-num">2017 — 2020</div>
+            <h3>MS in Software Engineering</h3>
+            <p><strong>Bahria University Islamabad, Pakistan</strong><br />
+            Thesis: <em>A Framework to Detect Hate Speech in the Pashto Language from Social Media Using ML.</em></p>
+          </div>
+          <span class="tag">KPK Govt Scholarship Awardee</span>
+        </div>
+
+        <div class="research-card">
+          <div>
+            <div class="card-num">2012 — 2016</div>
+            <h3>BS in Software Engineering</h3>
+            <p><strong>COMSATS University Abbottabad, Pakistan</strong><br />
+            Final Project: <em>Accessible messaging application for visually impaired individuals.</em></p>
+          </div>
+          <span class="tag">Software Engineering</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;">
+        <h4 style="color:#fff; font-size: 1rem; margin-bottom: 0.75rem;">Honors &amp; Selected Certifications</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; color: var(--text-muted);">
+          <li>🏆 <strong>Best Research Paper Award (2023)</strong> — Recognized for scholarly contribution in software security.</li>
+          <li>📜 <strong>Research Excellence Certification</strong> — Bahria University Islamabad (8-week intensive).</li>
+          <li>🎓 <strong>KPK Government Merit Scholarship (2018)</strong> — Awarded for Master's Degree in Software Engineering.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section 07: Connect -->
+    <section id="contact">
+      <div class="contact-grid">
+        <div>
+          <span class="section-eyebrow">Let’s Connect</span>
+          <h2 class="contact-card-title">Initiate a research discussion or academic collaboration.</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem;">
+            Whether you are seeking collaborative research opportunities in AI-driven cybersecurity, joint grant proposals, or guest lectures, feel free to reach out.
+          </p>
+          <a href="mailto:aftab.janisar@gmail.com" class="btn-primary">Email Directly ↗</a>
+        </div>
+
+        <div class="contact-items">
+          <div class="contact-entry">
+            <span>Primary Email</span>
+            <a href="mailto:aftab.janisar@gmail.com">aftab.janisar@gmail.com</a>
+          </div>
+
+          <div class="contact-entry">
+            <span>WhatsApp / Mobile</span>
+            <a href="https://wa.me/923317773799" target="_blank" rel="noopener noreferrer">+92 331 7773799</a>
+          </div>
+
+          <div class="contact-entry">
+            <span>WeChat ID</span>
+            <p>wxid_drk8cjebazox12</p>
+          </div>
+
+          <div class="contact-entry">
+            <span>Current Location</span>
+            <p>Bangkok, Thailand</p>
+          </div>
+
+          <div class="contact-entry">
+            <span>Google Scholar</span>
+            <a href="https://scholar.google.com/citations?user=fT6jliUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Aftab Alam Janisar ↗</a>
+          </div>
+
+          <div class="contact-entry">
+            <span>Web of Science / Scopus</span>
+            <a href="https://www.webofscience.com/wos/author/record/HSG-0507-2023" target="_blank" rel="noopener noreferrer">Researcher Profile ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="color: #cbd5e1; margin-bottom: 0.25rem;">© 2026 Dr. Aftab Alam Janisar. All rights reserved.</p>
+      <p style="font-size: 0.78rem;">AI in Cybersecurity · Security Requirements Engineering · IoT Resilience</p>
+      <div style="margin-top: 1rem;">
+        <a href="#home" style="color: var(--accent); font-size: 0.8rem;">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function filterPubs(category) {
+      const cards = document.querySelectorAll('.pub-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick').includes(category)) {
+          btn.classList.add('active');
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
